@@ -1,0 +1,11 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook 'apt'
+cookbook 'build-essential'
+cookbook 'mysql', '5.5.3'
+cookbook 'ruby_build'
+cookbook 'nodejs'
+cookbook 'rbenv', git: 'https://github.com/aminin/chef-rbenv'
+cookbook 'vim'
+cookbook 'java'
+cookbook 'neo4j-server', git: 'https://github.com/michaelklishin/neo4j-server-chef-cookbook'

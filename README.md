@@ -1,29 +1,26 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+O aplicativo deve prover a melhor rota entre dois pontos.
+Foi escolhido utilizar o Neo4J pois ele é classificado como banco de dados de grafos sendo um banco otimizado para se trabalhar com essa estrutura de dados, assim a aplicação não fica responsável pela implementação dos algorítimos ligados a grafos, estando mais preparado para se trabalhar com sistemas mais escaláveis.
 
-### What is this repository for? ###
+Esse problema é conhecido como "Problema do caminho mínimo" ref: http://pt.wikipedia.org/wiki/Problema_do_caminho_m%C3%ADnimo 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+A ferramenta Chef e Vagrant foram escolhidas para fazer o provisionamento da maquina de desenvolvimento, mantendo uma VM padrão para o desenvolvimento.
 
-### How do I get set up? ###
+O manual da api foi descrito utilizando a ferramenta Apipie. é acessível por meio do link "/apipie"
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Quais tecnologia esse aplicativa utiliza? ###
 
-### Contribution guidelines ###
+* Ruby on Rails 4.2
+* Neo4j
+* Chef
 
-* Writing tests
-* Code review
-* Other guidelines
+### Como configurar? ###
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Instalar o Vagrant com os plugins
+** vagrant plugin install vagrant-librarian-chef-nochef
+** vagrant plugin install vagrant-omnibus
+* logar na maquina virtual "vagrant up; vagrant ssh"
+* bundle 
+* configurar as senhas do Neo4J no secret.yml
+* rake db:seed

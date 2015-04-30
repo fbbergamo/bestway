@@ -3,8 +3,8 @@ class RouteSearch
     @from = from
     @to = to
     @map = map
-    @autonomy = autonomy
-    @gas_price = gas_price
+    @autonomy = autonomy.to_i
+    @gas_price = gas_price.to_f
   end
 
   def price_per_km
@@ -20,11 +20,11 @@ class RouteSearch
   end
 
   def price_per_km
-    @gas_price/@autonomy
+    @gas_price/@autonomy if @autonomy.present? and @autonomy > 0
   end
 
   def route_price
-    price_per_km * @total_distance
+    price_per_km * total_distance if price_per_km.present? and total_distance.present?
   end
 
   def search
@@ -39,6 +39,7 @@ class RouteSearch
     if result.present?
       @total_distance = result.total_distance
       @order = result.order
+      return true
     else
       return false
     end

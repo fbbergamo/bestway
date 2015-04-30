@@ -10,7 +10,7 @@ class LocationPath
   end
 
   def relationships
-    @node.rels(type: "PATH", beteween: @node2)
+    @node.rels(type: "PATH", between: @node2)
   end
 
   def create_relationship_path

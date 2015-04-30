@@ -21,7 +21,7 @@ module Vagrant
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.neo4j.session_options = { basic_auth: { username: 'neo4j', password: 'neo4j123'} }
+    config.neo4j.session_options = { basic_auth: { username: Rails.application.secrets.user_neo4j, password: Rails.application.secrets.password_neo4j} }
     config.neo4j.session_type = :server_db
     config.neo4j.session_path = 'http://localhost:7474'
     config.active_record.raise_in_transactional_callbacks = true

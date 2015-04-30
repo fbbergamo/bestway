@@ -7,7 +7,7 @@ Foi escolhido utilizar o Neo4J pois ele é classificado como banco de dados de g
 
 A ferramenta Chef e Vagrant foram escolhidas para fazer o provisionamento da maquina de desenvolvimento, mantendo uma VM padrão para o desenvolvimento.
 
-O manual da API foi descrito utilizando a ferramenta Apipie. é acessível por meio do link "/apipie"
+O manual da API foi descrito utilizando a GEM Apipie. é acessível por meio do link http://localhost:3000/apipie
 
 ### Quais tecnologia esse aplicativa utiliza? ###
 

@@ -1,6 +1,7 @@
 # README #
 
 O aplicativo deve prover a melhor rota entre dois pontos.
+
 Foi escolhido utilizar o Neo4J pois ele é classificado como banco de dados de grafos sendo um banco otimizado para se trabalhar com essa estrutura de dados, assim a aplicação não fica responsável pela implementação dos algorítimos ligados a grafos, estando mais preparado para se trabalhar com sistemas mais escaláveis.
 
 Esse problema é conhecido como "Problema do caminho mínimo" ref: http://pt.wikipedia.org/wiki/Problema_do_caminho_m%C3%ADnimo 

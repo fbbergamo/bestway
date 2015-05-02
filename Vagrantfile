@@ -30,9 +30,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "rbenv::vagrant"
     chef.add_recipe "vim"
     chef.add_recipe "java"
-
-    chef.add_recipe "mysql::server"
-    chef.add_recipe "mysql::client"
     chef.add_recipe "neo4j-server::tarball"
 
     chef.json = {
@@ -50,9 +47,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             ]
           }
         }]
-      },
-      mysql: {
-        server_root_password: ''
       }
     }
 

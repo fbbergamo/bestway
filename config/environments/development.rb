@@ -35,7 +35,9 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
+  config.neo4j.session_options = { basic_auth: { username: Rails.application.secrets.user_neo4j, password: Rails.application.secrets.password_neo4j} }
+  config.neo4j.session_type = :server_db
+  config.neo4j.session_path = 'http://localhost:7474'
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

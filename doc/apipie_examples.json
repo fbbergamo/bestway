@@ -1,0 +1,148 @@
+{
+  "locations#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/locations",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "locations": {
+          "to": "A",
+          "from": "B",
+          "distance": 10,
+          "map": "SP"
+        }
+      },
+      "response_data": {
+        "to": "A",
+        "from": "B",
+        "distance": 10,
+        "map": "SP",
+        "location_to": {
+          "location": {
+            "map": "SP",
+            "name": "A",
+            "id": "f4eb3e09-0b07-4f36-a396-5548ffbc1606"
+          }
+        },
+        "location_from": {
+          "location": {
+            "map": "SP",
+            "name": "B",
+            "id": "6ab834e0-d345-42ac-8c81-ca929c087b01"
+          }
+        },
+        "path": {
+          "node": {
+            "location": {
+              "map": "SP",
+              "name": "A",
+              "id": "f4eb3e09-0b07-4f36-a396-5548ffbc1606"
+            }
+          },
+          "node2": {
+            "location": {
+              "map": "SP",
+              "name": "B",
+              "id": "6ab834e0-d345-42ac-8c81-ca929c087b01"
+            }
+          },
+          "distance": 10
+        },
+        "validation_context": null,
+        "errors": {
+        }
+      },
+      "code": 201,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/locations",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "locations": {
+          "to": "",
+          "from": "B",
+          "distance": 10,
+          "map": "SP"
+        }
+      },
+      "response_data": {
+        "errors": {
+          "to": [
+            "can't be blank"
+          ],
+          "location_to": [
+            "Name can't be blank"
+          ]
+        }
+      },
+      "code": 422,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "locations#route": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/locations/route",
+      "versions": [
+        "1.0"
+      ],
+      "query": "to=&from=B&map=SP&autonomy=-1&gas_price=2.1",
+      "request_data": null,
+      "response_data": {
+        "errors": {
+          "to": [
+            "can't be blank"
+          ],
+          "autonomy": [
+            "must be greater than 0"
+          ]
+        }
+      },
+      "code": 422,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/locations/route",
+      "versions": [
+        "1.0"
+      ],
+      "query": "to=A&from=B&map=SP&autonomy=10&gas_price=2.5",
+      "request_data": null,
+      "response_data": null,
+      "code": 404,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/locations/route",
+      "versions": [
+        "1.0"
+      ],
+      "query": "to=A&from=B&map=SP&autonomy=10&gas_price=2.5",
+      "request_data": null,
+      "response_data": {
+        "price": 6.25,
+        "path": [
+          "B",
+          "A"
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ]
+}

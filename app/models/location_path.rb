@@ -1,4 +1,5 @@
 class LocationPath
+
   def initialize(to, from, distance)
     @node = to
     @node2 = from
@@ -14,9 +15,12 @@ class LocationPath
   end
 
   def create_relationship_path
-    if relationship_exist?
-      relationships.each(&:del)
-    end
+    keep_one_path
     @node.create_rel("PATH", @node2, :weight=> @distance)
+  end
+
+  private
+  def keep_one_path
+    relationships.each(&:del) if relationship_exist?
   end
 end
